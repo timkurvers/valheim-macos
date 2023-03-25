@@ -100,7 +100,7 @@ These steps take between 15 to 30 minutes to complete, depending on network spee
 ### Why is there no downloadable build?
 
 To avoid distributing copyrighted game data, the build script is provided as a means for players who own Valheim
-on Steam to create their own macOS build and play on their prefered hardware.
+on Steam to create their own macOS build and play on their preferred hardware.
 
 Additionally, pre-built binaries from untrusted sources could cause havoc if malicious. Having an open-source
 build-script available for vetting by anyone limits that risk.
