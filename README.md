@@ -93,7 +93,16 @@ These steps take between 15 to 30 minutes to complete, depending on network spee
 
 - Steam overlay is non-functional. For an alternative FPS counter, press `F2` in-game.
 - Generating and entering worlds may seem to infinitely hang before a loading screen is shown. Be patient.
-- Cloud-saved characters may not show up initially or may not sync at all.
+- Steam Cloud integration may misbehave: characters or worlds not syncing across devices.
+
+  If you suspect sync trouble, check `~/Library/Application Support/Steam/logs/cloud_log.txt` first.
+
+  Notable paths for troubleshooting:
+
+  - Local data (for this particular build): `~/Library/Application Support/unity.IronGate.Valheim-macOS-Custom/`
+  - Remote data (via Steam Cloud): `~/Library/Application Support/Steam/userdata/<steam id>/892970/remote/`
+
+  The data you have stored in Steam Cloud for Valheim can be [browsed online] (requires login).
 
 ## FAQ
 
@@ -131,6 +140,7 @@ Feedback, issues, or pull requests with improvements are more than welcome! 🙏
 [Munin]: https://steamcommunity.com/app/892970/discussions/2/3192485276070223820/?ctp=68#c3446961485766994098
 [Valheim]: https://store.steampowered.com/app/892970/Valheim/
 [at your own risk]: LICENSE.md
+[browsed online]: https://store.steampowered.com/account/remotestorageapp/?appid=892970
 [official Valheim Twitter account]: https://twitter.com/Valheimgame
 [porting Unity games to different platforms]: https://www.pcgamingwiki.com/wiki/Engine:Unity/Porting
 [r/macgaming]: https://www.reddit.com/r/macgaming/comments/1217lko/valheim_macos_build_script/
