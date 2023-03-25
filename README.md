@@ -23,9 +23,10 @@ https://user-images.githubusercontent.com/378235/227661255-e07504da-6072-4e8c-b3
 
 ## Performance
 
-The build performs surprisingly well, given that Apple deprecated OpenGL four years ago (!). In addition, running
-the game on Apple Silicon hardware requires using the Rosetta 2 translation layer, which may incur an additional
-performance penalty.
+The build performs surprisingly well, given that Apple deprecated OpenGL four years ago (!).
+
+In addition, running the game on Apple Silicon hardware requires using the Rosetta 2 translation layer, which may
+incur an additional performance penalty.
 
 Some statistics thanks to the kind community members of [r/macgaming]:
 
@@ -38,7 +39,7 @@ Some statistics thanks to the kind community members of [r/macgaming]:
 | M1 Pro 14"       | 1440p         | Medium        | 45-60fps |
 | Intel 15" (2017) | 800p          | Low           | 30-40fps |
 
-🍻 Here is to hoping that Iron Gate support macOS natively in the future with Apple Silicon and Metal support. 🍻
+Here is to hoping that Iron Gate support macOS natively in the future with Apple Silicon and Metal support. 🍻
 
 ## Disclaimer
 
