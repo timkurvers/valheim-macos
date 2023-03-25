@@ -5,7 +5,7 @@
 A Steam leak in 2021 seemed to indicate that Iron Gate, developers of Valheim, were exploring macOS
 support.
 
-Unfortunately, that seems in limbo currently, as pointed out by moderator [Munin]:
+Unfortunately, that seems to be in limbo currently, as pointed out by moderator [Munin]:
 
 > A little update: They [Iron Gate] still want do the Mac version. The question is just when. Currently, they focus on developing the Windows & Linux versions of the game (surprise, surprise - I know), and simply don't have time to work on supporting another OS.
 >
@@ -15,7 +15,7 @@ After reading an article on [porting Unity games to different platforms], I star
 building a custom Valheim build for macOS based on the Linux version: collecting the game data, fetching the
 correct dependencies and stitching it all together.
 
-Happy to report that actually paid off 🥳
+Happy to report that it actually paid off 🥳
 
 https://user-images.githubusercontent.com/378235/227661255-e07504da-6072-4e8c-b383-6d2df6b4e329.mp4
 
@@ -27,7 +27,7 @@ The build has been tested in both single/multiplayer and seems to function adequ
 effects.
 
 That said, there is an inherent risk to using custom game builds. In particular, Valheim interfaces with Steam,
-Azure PlayFab cross-play services and most likely Iron Gate's own services. These services could start treating
+Azure PlayFab cross-play services, and most likely Iron Gate's own services. These services could start treating
 this custom build as problematic (or the build itself may behave incorrectly) and put your account, characters
 etc. in jeopardy.
 
@@ -56,7 +56,7 @@ These steps take between 15 to 30 minutes to complete, depending on network spee
    > The script requires Steam credentials so that Valheim data can be acquired. As the original
    > macOS Steam client does not have access to Valheim, this is done via [DepotDownloader].
 
-4. Once the build script finishes, verify presence of `Valheim.app` in the `build` folder.
+4. Once the build script finishes, verify the presence of `Valheim.app` in the `build` folder.
 
 ## Running
 
@@ -106,7 +106,7 @@ The icon is the profile image of the [official Valheim Twitter account] and is p
 
 ## Contributions
 
-Feedback, issues or pull requests with improvements more than welcome! 🙏
+Feedback, issues, or pull requests with improvements are more than welcome! 🙏
 
 [DepotDownloader]: https://github.com/SteamRE/DepotDownloader
 [Dotnet CLI]: https://learn.microsoft.com/en-us/dotnet/core/tools/
