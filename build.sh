@@ -26,6 +26,17 @@ confirm() {
   esac
 }
 
+verify() {
+  local hash
+  hash=$(md5 -q "$1")
+  if [ "$hash" != "$2" ]; then
+    echo "The file '$1' may be corrupted: md5 hash $hash != $2 (expected)"
+    if ! confirm "Do you still want to continue? (not recommended)"; then
+      exit 1
+    fi
+  fi
+}
+
 cd vendor
 
 if [ ! -d "depots/$depotid/$buildid" ]; then
@@ -34,6 +45,7 @@ if [ ! -d "depots/$depotid/$buildid" ]; then
     if [ ! -d "depotdownloader-2.4.7" ]; then
       if confirm "Download (~2MB) and unzip DepotDownloader to download Valheim from Steam?"; then
         curl -L https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.4.7/depotdownloader-2.4.7.zip -o depotdownloader-2.4.7.zip
+        verify depotdownloader-2.4.7.zip acee4d813db4e6908b75d348767cf01e
         unzip depotdownloader-2.4.7.zip -d depotdownloader-2.4.7
       fi
 
@@ -69,6 +81,7 @@ fi
 if [ ! -d "Steamworks.NET-Standalone_14.0.0" ]; then
   if confirm "Download Steamworks.NET (~2.5MB) from GitHub?"; then
     curl -L https://github.com/rlabrecque/Steamworks.NET/releases/download/14.0.0/Steamworks.NET-Standalone_14.0.0.zip -o Steamworks.NET-Standalone_14.0.0.zip
+    verify Steamworks.NET-Standalone_14.0.0.zip 889417c79b52e7a33e67807aac21337c
     unzip Steamworks.NET-Standalone_14.0.0.zip -d Steamworks.NET-Standalone_14.0.0
   fi
 
@@ -81,6 +94,7 @@ fi
 if [ ! -d "PlayFabParty-for-macOS_v1.7.16" ]; then
   if confirm "Download PlayFabParty (~100MB) from GitHub?"; then
     curl -L https://github.com/PlayFab/PlayFabParty/releases/download/v1.7.16/PlayFabParty-for-macOS.zip -o PlayFabParty-for-macOS_v1.7.16.zip
+    verify PlayFabParty-for-macOS_v1.7.16.zip 95cd6814893d57abd63c19fb668d304c
     unzip PlayFabParty-for-macOS_v1.7.16.zip -d PlayFabParty-for-macOS_v1.7.16
   fi
 
