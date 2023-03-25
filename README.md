@@ -39,7 +39,7 @@ etc. in jeopardy.
 ### Prerequisites
 
 - A Steam account that owns [Valheim].
-- ~15GB free hard disk space.
+- ~15GB free hard disk space. The majority of this space can be reclaimed once the build is complete.
 - An internet connection to download the game data and dependencies.
 - [Dotnet CLI]
   - Easiest to install via [Homebrew]: `brew install dotnet@7`.
@@ -57,6 +57,8 @@ These steps take between 15 to 30 minutes to complete, depending on network spee
    > macOS Steam client does not have access to Valheim, this is done via [DepotDownloader].
 
 4. Once the build script finishes, verify the presence of `Valheim.app` in the `build` folder.
+5. If you are in dire need of disk space: the contents of the `vendor` folder can be safely deleted at this point.
+   Those files are there to make future rebuilds faster, but are not necessary for the app to function once built.
 
 ## Running
 
