@@ -96,6 +96,14 @@ Here is to hoping that Iron Gate support macOS natively in the future with Apple
 This repository does not distribute any game data, and is provided as a means for players who own
 Valheim on Steam to play on their prefered hardware.
 
+### How to pass launch arguments?
+
+As the game cannot be launched directly from macOS Steam, launch it manually with the desired arguments:
+
+```shell
+open build/Valheim.app --args -console
+```
+
 ### Why is the bundle named `unity.IronGate.Valheim-macOS-Custom` internally?
 
 This is to avoid any collisions with a potential future macOS version by the official development team.
