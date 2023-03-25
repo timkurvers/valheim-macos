@@ -91,10 +91,13 @@ all other settings on low/off.
 
 Here is to hoping that Iron Gate support macOS natively in the future with Apple Silicon and Metal support.
 
-### Is this legal?
+### Why is there no downloadable build?
 
-This repository does not distribute any game data, and is provided as a means for players who own
-Valheim on Steam to play on their prefered hardware.
+To avoid distributing copyrighted game data, the build script is provided as a means for players who own Valheim
+on Steam to create their own macOS build and play on their prefered hardware.
+
+Additionally, pre-built binaries from untrusted sources could cause havoc if malicious. Having an open-source
+build-script available for vetting by anyone limits that risk.
 
 ### How to pass launch arguments?
 
