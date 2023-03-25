@@ -99,8 +99,8 @@ These steps take between 15 to 30 minutes to complete, depending on network spee
 
   Notable paths for troubleshooting:
 
-  - Local data (for this particular build): `~/Library/Application Support/unity.IronGate.Valheim-macOS-Custom/`
-  - Remote data (via Steam Cloud): `~/Library/Application Support/Steam/userdata/<steam id>/892970/remote/`
+  - Local data: `~/Library/Application Support/unity.IronGate.Valheim-macOS-Custom/`
+  - Remote data: `~/Library/Application Support/Steam/userdata/<steam id>/892970/remote/`
 
   The data you have stored in Steam Cloud for Valheim can be [browsed online] (requires login).
 
