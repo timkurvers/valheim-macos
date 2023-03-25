@@ -19,7 +19,26 @@ Happy to report that it actually paid off 🥳
 
 https://user-images.githubusercontent.com/378235/227661255-e07504da-6072-4e8c-b383-6d2df6b4e329.mp4
 
-[In the above footage `Bloom` and `SSAO` are turned on for aesthetic effect; turn these off for increased performance]
+<sup>The footage above has `Bloom` and `SSAO` enabled for aesthetics; turn these off for increased performance.</sup>
+
+## Performance
+
+The build performs surprisingly well, given that Apple deprecated OpenGL four years ago (!). In addition, running
+the game on Apple Silicon hardware requires using the Rosetta 2 translation layer, which may incur an additional
+performance penalty.
+
+Some statistics thanks to the kind community members of [r/macgaming]:
+
+| Hardware         | Resolution    | Settings      | FPS      |
+| ---------------- | ------------- | ------------- | -------- |
+| M1 Max 14"       | 1440p         | Medium        | 50-60fps |
+| M1 Max 14"       | 1080p         | Medium / High | 60fps    |
+| M1 Pro 16"       | 1440p         | Low           | 60fps+   |
+| M1 Pro 16"       | 1080p         | Low           | 100fps   |
+| M1 Pro 14"       | 1440p         | Medium        | 45-60fps |
+| Intel 15" (2017) | 800p          | Low           | 30-40fps |
+
+🍻 Here is to hoping that Iron Gate support macOS natively in the future with Apple Silicon and Metal support. 🍻
 
 ## Disclaimer
 
@@ -77,22 +96,6 @@ These steps take between 15 to 30 minutes to complete, depending on network spee
 
 ## FAQ
 
-### How well does it perform?
-
-As Apple deprecated OpenGL four years ago (!) performance is not optimal. In addition, running the
-game on Apple Silicon hardware requires using the Rosetta 2 translation layer, which incurs an additional
-performance penalty.
-
-Some statistics:
-
-- 14" M1 Pro Macbook Pro (2021): 45-60 fps @ 2560x1440 with high draw distance,
-all other settings on medium.
-
-- 15" Intel Macbook Pro (2017): 30-40 fps @ 1280x800 with high draw distance,
-all other settings on low/off.
-
-Here is to hoping that Iron Gate support macOS natively in the future with Apple Silicon and Metal support.
-
 ### Why is there no downloadable build?
 
 To avoid distributing copyrighted game data, the build script is provided as a means for players who own Valheim
@@ -129,3 +132,4 @@ Feedback, issues, or pull requests with improvements are more than welcome! 🙏
 [at your own risk]: LICENSE.md
 [official Valheim Twitter account]: https://twitter.com/Valheimgame
 [porting Unity games to different platforms]: https://www.pcgamingwiki.com/wiki/Engine:Unity/Porting
+[r/macgaming]: https://www.reddit.com/r/macgaming/comments/1217lko/valheim_macos_build_script/
