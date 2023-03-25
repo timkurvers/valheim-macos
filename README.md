@@ -21,16 +21,18 @@ https://user-images.githubusercontent.com/378235/227661255-e07504da-6072-4e8c-b3
 
 [In the above footage `Bloom` and `SSAO` are turned on for aesthetic effect; turn these off for increased performance]
 
-## ❗️Disclaimer❗️
+## Disclaimer
 
 The build has been tested in both single/multiplayer and seems to function adequately without any negative
 effects.
 
 That said, there is an inherent risk to using custom game builds. In particular, Valheim interfaces with Steam,
 Azure PlayFab cross-play services and most likely Iron Gate's own services. These services could start treating
-this custom build as problematic and put your account, characters etc. in jeopardy.
+this custom build as problematic (or the build itself may behave incorrectly) and put your account, characters
+etc. in jeopardy.
 
-**Usage of this build script and the resulting macOS build is [at your own risk].**
+> __Warning__
+> **Usage of this build script and the resulting macOS build is [at your own risk].**
 
 ## Building
 
@@ -50,8 +52,9 @@ These steps take between 15 to 30 minutes to complete, depending on network spee
 2. Navigate to the cloned repository in your terminal of choice.
 3. Run `./build.sh` and follow the instructions.
 
-   Note: The script requires Steam credentials so that Valheim data can be acquired. As the original
-   macOS Steam client does not have access to Valheim, this is done via [DepotDownloader].
+   > __Note__
+   > The script requires Steam credentials so that Valheim data can be acquired. As the original
+   > macOS Steam client does not have access to Valheim, this is done via [DepotDownloader].
 
 4. Once the build script finishes, verify presence of `Valheim.app` in the `build` folder.
 
@@ -60,8 +63,9 @@ These steps take between 15 to 30 minutes to complete, depending on network spee
 1. Start Steam and log into an account that owns Valheim.
 2. Launch `Valheim.app`.
 
-Note that Valheim patches will most likely require updates to the build script and you may not be
-able to play with an outdated build.
+> __Note__
+> Future Valheim updates will most likely require updates to the build script and you may not be able to
+> play with an outdated build.
 
 ## Known issues
 
