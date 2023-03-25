@@ -61,7 +61,7 @@ These steps take between 15 to 30 minutes to complete, depending on network spee
 ## Running
 
 1. Start Steam and log into an account that owns Valheim.
-2. Launch `Valheim.app`.
+2. Launch `Valheim.app` from the `build` folder.
 
 > __Note__
 > Future Valheim updates will most likely require updates to the build script and you may not be able to
