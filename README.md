@@ -89,6 +89,8 @@ all other settings on medium.
 - 15" Intel Macbook Pro (2017): 30-40 fps @ 1280x800 with high draw distance,
 all other settings on low/off.
 
+Here is to hoping that Iron Gate support macOS natively in the future with Apple Silicon and Metal support.
+
 ### Is this legal?
 
 This repository does not distribute any game data, and is provided as a means for players who own
