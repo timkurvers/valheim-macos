@@ -43,7 +43,7 @@ Here is to hoping that Iron Gate support macOS natively in the future with Apple
 
 ## Disclaimer
 
-The build has been tested in both single/multiplayer and seems to function adequately without any negative
+The build has been tested in both single / multiplayer and seems to function adequately without any negative
 effects.
 
 That said, there is an inherent risk to using custom game builds. In particular, Valheim interfaces with Steam,
@@ -52,7 +52,7 @@ this custom build as problematic (or the build itself may behave incorrectly) an
 etc. in jeopardy.
 
 > __Warning__
-> **Usage of this build script and the resulting macOS build is [at your own risk].**
+> **Usage of this build script and the resulting macOS build is [at your own risk]. Official support channels will not be able to help you with any issues.**
 
 ## Building
 
