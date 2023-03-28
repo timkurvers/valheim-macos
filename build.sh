@@ -6,12 +6,12 @@ set -e
 # Valheim configuration
 appid=892970
 depotid=892971
-buildid=10699914
-version="0.214.2"
+buildid=10854540
+version="0.214.3"
 
 # Unity configuration
-unityversion="2020.3.33f1"
-unityhash="915a7af8b0d5"
+unityversion="2020.3.45f1"
+unityhash="660cd1701bd5"
 variant="macos_x64_nondevelopment_mono"
 
 confirm() {
