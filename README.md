@@ -104,7 +104,10 @@ To generate a new build:
 
 ## Known issues
 
-- Steam overlay is non-functional. For an alternative FPS counter, press `F2` in-game.
+- Steam overlay is non-functional when launched directly from `Valheim.app`.
+  - Press `F2` in-game to show Valheim's built-in FPS and network details panel.
+  - Alternatively: add `Valheim.app` as a non-Steam game and launch via Steam.
+
 - Generating and entering worlds may seem to infinitely hang before a loading screen is shown. Be patient.
 - Steam Cloud integration may misbehave: characters or worlds not syncing across devices.
 
