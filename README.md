@@ -109,7 +109,8 @@ To generate a new build:
   - Alternatively: add `Valheim.app` as a non-Steam game and launch via Steam.
 
 - Generating and entering worlds may seem to infinitely hang before a loading screen is shown. Be patient.
-- Steam Cloud integration may misbehave: characters or worlds not syncing across devices.
+
+- [Steam Cloud integration may misbehave]: characters or worlds not syncing across devices.
 
   If you suspect sync trouble, check `~/Library/Application Support/Steam/logs/cloud_log.txt` first.
 
@@ -157,6 +158,7 @@ Feedback, issues, or pull requests with improvements are more than welcome! 🙏
 [Game pads / controllers may not work]: https://github.com/timkurvers/valheim-macos/issues/11
 [Homebrew]: https://brew.sh/
 [Munin]: https://steamcommunity.com/app/892970/discussions/2/3192485276070223820/?ctp=68#c3446961485766994098
+[Steam Cloud integration may misbehave]: https://github.com/timkurvers/valheim-macos/issues/10
 [Valheim]: https://store.steampowered.com/app/892970/Valheim/
 [at your own risk]: LICENSE.md
 [browsed online]: https://store.steampowered.com/account/remotestorageapp/?appid=892970
