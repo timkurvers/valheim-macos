@@ -154,7 +154,7 @@ Feedback, issues, or pull requests with improvements are more than welcome! 🙏
 
 [DepotDownloader]: https://github.com/SteamRE/DepotDownloader
 [Dotnet CLI]: https://learn.microsoft.com/en-us/dotnet/core/tools/
-[Game pads / controllers may not work]: #11
+[Game pads / controllers may not work]: https://github.com/timkurvers/valheim-macos/issues/11
 [Homebrew]: https://brew.sh/
 [Munin]: https://steamcommunity.com/app/892970/discussions/2/3192485276070223820/?ctp=68#c3446961485766994098
 [Valheim]: https://store.steampowered.com/app/892970/Valheim/
