@@ -120,6 +120,8 @@ To generate a new build:
 
   The data you have stored in Steam Cloud for Valheim can be [browsed online] (requires login).
 
+- [Game pads / controllers may not work].
+
 ## FAQ
 
 ### Why is there no downloadable build?
@@ -152,6 +154,7 @@ Feedback, issues, or pull requests with improvements are more than welcome! 🙏
 
 [DepotDownloader]: https://github.com/SteamRE/DepotDownloader
 [Dotnet CLI]: https://learn.microsoft.com/en-us/dotnet/core/tools/
+[Game pads / controllers may not work]: #11
 [Homebrew]: https://brew.sh/
 [Munin]: https://steamcommunity.com/app/892970/discussions/2/3192485276070223820/?ctp=68#c3446961485766994098
 [Valheim]: https://store.steampowered.com/app/892970/Valheim/
