@@ -1,5 +1,7 @@
 # Valheim macOS
 
+![Valheim version](https://badgen.net/badge/Valheim%20version/0.214.305/green)
+
 ## Background
 
 A Steam leak in 2021 seemed to indicate that Iron Gate, developers of Valheim, were exploring macOS
@@ -65,7 +67,7 @@ etc. in jeopardy.
   - Easiest to install via [Homebrew]: `brew install dotnet@7`.
   - Alternatively, install using the [official Dotnet installer].
 
-### Steps
+### Initial build
 
 These steps take between 15 to 30 minutes to complete, depending on network speed and computing power.
 
@@ -86,9 +88,19 @@ These steps take between 15 to 30 minutes to complete, depending on network spee
 1. Start Steam and log into an account that owns Valheim.
 2. Launch `Valheim.app` from the `build` folder.
 
+## Patching
+
+Future Valheim patches will require updates to the build script and you may not be able to play with an outdated
+build. Look at the top of this README to see what version of Valheim is currently supported.
+
 > __Note__
-> Future Valheim updates will most likely require updates to the build script and you may not be able to
-> play with an outdated build.
+> It may take a day or two before the script is updated to support a recently released patch.
+
+To generate a new build:
+
+1. Fetch the latest build script using `git pull`.
+2. Optional: make a backup of the previous build by copying `Valheim.app` elsewhere.
+3. Run `./build.sh` once more.
 
 ## Known issues
 
