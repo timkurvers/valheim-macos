@@ -63,6 +63,7 @@ etc. in jeopardy.
 - An internet connection to download the game data and dependencies.
 - [Dotnet CLI]
   - Easiest to install via [Homebrew]: `brew install dotnet@7`.
+  - Alternatively, install using the [official Dotnet installer].
 
 ### Steps
 
@@ -141,6 +142,7 @@ Feedback, issues, or pull requests with improvements are more than welcome! 🙏
 [Valheim]: https://store.steampowered.com/app/892970/Valheim/
 [at your own risk]: LICENSE.md
 [browsed online]: https://store.steampowered.com/account/remotestorageapp/?appid=892970
+[official Dotnet installer]: https://dotnet.microsoft.com/en-us/download
 [official Valheim Twitter account]: https://twitter.com/Valheimgame
 [porting Unity games to different platforms]: https://www.pcgamingwiki.com/wiki/Engine:Unity/Porting
 [r/macgaming]: https://www.reddit.com/r/macgaming/comments/1217lko/valheim_macos_build_script/
