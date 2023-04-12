@@ -6,8 +6,8 @@ set -e
 # Valheim configuration
 appid=892970
 depotid=892971
-buildid=10874822
-version="0.214.305"
+buildid=10946502
+version="0.215.2"
 
 # Unity configuration
 unityversion="2020.3.45f1"
