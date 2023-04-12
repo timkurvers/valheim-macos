@@ -1,6 +1,6 @@
 # Valheim macOS
 
-![Valheim version](https://badgen.net/badge/Valheim%20version/0.214.305/green)
+[![Valheim version](https://badgen.net/badge/Valheim%20version/0.214.305/green)](https://valheim.com/news/patch-0-214-300-but-cooler)
 
 ## Background
 
