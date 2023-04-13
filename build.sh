@@ -113,11 +113,11 @@ prefix="build/Valheim.app/Contents"
 unityprefix="vendor/Unity-$unityversion/Unity.pkg.tmp/Payload/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport"
 
 cat skeleton/Valheim.app/Contents/Info.plist \
-	| sed "s|\$appid|$appid|g" \
-	| sed "s|\$unityhash|$unityhash|g" \
-	| sed "s|\$unityversion|$unityversion|g" \
-	| sed "s|\$version|$version|g" \
-	> $prefix/Info.plist
+    | sed "s|\$appid|$appid|g" \
+    | sed "s|\$unityhash|$unityhash|g" \
+    | sed "s|\$unityversion|$unityversion|g" \
+    | sed "s|\$version|$version|g" \
+    > $prefix/Info.plist
 
 cp $unityprefix/Variations/$variant/UnityPlayer.app/Contents/Frameworks/* $prefix/Frameworks/
 cp $unityprefix/Variations/$variant/UnityPlayer.app/Contents/MacOS/UnityPlayer $prefix/MacOS/Valheim
