@@ -112,6 +112,8 @@ To generate a new build:
 
 - [Steam Cloud integration may misbehave]: characters or worlds not syncing across devices.
 
+  This could be since Valheim changed cloud mechanics in version 0.209.8 in the summer of 2022. Log into Valheim on a computer which is properly synced and mark all characters and worlds as "Cloud Save". 
+
   If you suspect sync trouble, check `~/Library/Application Support/Steam/logs/cloud_log.txt` first.
 
   Notable paths for troubleshooting:
