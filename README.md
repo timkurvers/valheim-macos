@@ -75,6 +75,11 @@ etc. in jeopardy.
 These steps take between 15 to 30 minutes to complete, depending on network speed and computing power.
 
 1. Clone this repository: `git clone https://github.com/timkurvers/valheim-macos`.
+
+   > __Note__
+   > Downloading the repository as a zip-file may cause [the build to be damaged] due to macOS quarantining
+   > files that originate from the internet.
+
 2. Navigate to the cloned repository in your terminal of choice.
 3. Run `./build.sh` and follow the instructions.
 
@@ -179,3 +184,4 @@ Feedback, issues, or pull requests with improvements are more than welcome! 🙏
 [official Valheim Twitter account]: https://twitter.com/Valheimgame
 [porting Unity games to different platforms]: https://www.pcgamingwiki.com/wiki/Engine:Unity/Porting
 [r/macgaming]: https://www.reddit.com/r/macgaming/comments/1217lko/valheim_macos_build_script/
+[the build to be damaged]: https://github.com/timkurvers/valheim-macos/issues/16#issuecomment-1517025125
