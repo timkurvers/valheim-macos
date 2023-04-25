@@ -112,6 +112,10 @@ To generate a new build:
 
 - [Steam Cloud integration may misbehave]: characters or worlds not syncing across devices.
 
+  This could be since Valheim changed cloud save mechanics in version 0.209.8 in the summer of 2022. Log into Valheim on a computer which is properly synced and mark all characters and worlds as "Cloud Save" if you have not played since prior to version 0.209.8. 
+  
+  Since the MacOS-client lacks the custom paths used by the cloud save logics of Valheim prior to 0.209.8 the cloud sync will fail silently. Technically, Valheim seems to have used Windows-specific paths and used conversion logic on Linux without any support for MacOS paths, which has the effect that the MacOS client cannot resolve the paths and directory structure used by the old saves (as they are saved with the old structure in Steam cloud).
+
   If you suspect sync trouble, check `~/Library/Application Support/Steam/logs/cloud_log.txt` first.
 
   Notable paths for troubleshooting:
