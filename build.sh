@@ -58,7 +58,7 @@ if [ ! -d "depots/$depotid/$buildid" ]; then
 
     echo -n "Steam username: "
     read -r username
-    dotnet depotdownloader-2.4.7/DepotDownloader.dll -app $appid -os linux -username "$username" -beta public -manifest $manifestid -depot $depotid
+    dotnet depotdownloader-2.4.7/DepotDownloader.dll -app $appid -depot $depotid -manifest $manifestid -os linux -username "$username"
   fi
 
   if [ ! -d "depots/$depotid" ]; then
