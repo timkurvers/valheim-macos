@@ -7,6 +7,7 @@ set -e
 appid=892970
 depotid=892971
 buildid=10946502
+manifestid=8527277850814497792
 version="0.215.2"
 
 # Unity configuration
@@ -57,7 +58,7 @@ if [ ! -d "depots/$depotid/$buildid" ]; then
 
     echo -n "Steam username: "
     read -r username
-    dotnet depotdownloader-2.4.7/DepotDownloader.dll -app $appid -os linux -username "$username"
+    dotnet depotdownloader-2.4.7/DepotDownloader.dll -app $appid -os linux -username "$username" -beta public -manifest $manifestid -depot $depotid
   fi
 
   if [ ! -d "depots/$depotid" ]; then
