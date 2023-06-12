@@ -1,6 +1,6 @@
 # Valheim macOS
 
-[![Valheim version](https://badgen.net/badge/Valheim%20version/0.215.2/green)](https://valheim.com/news/patch-0-215-2)
+[![Valheim version](https://badgen.net/badge/Valheim%20version/0.216.9/green)](https://valheim.com/news/patch-0-216-9)
 
 ## Background
 
