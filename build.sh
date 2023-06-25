@@ -43,14 +43,14 @@ cd vendor
 if [ ! -d "depots/$depotid/$buildid" ]; then
   if confirm "Download Valheim v$version (~1.5GB) from Steam?"; then
 
-    if [ ! -d "depotdownloader-2.4.7" ]; then
+    if [ ! -d "depotdownloader-2.5.0" ]; then
       if confirm "Download (~2MB) and unzip DepotDownloader to download Valheim from Steam?"; then
-        curl -L https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.4.7/depotdownloader-2.4.7.zip -o depotdownloader-2.4.7.zip
-        verify depotdownloader-2.4.7.zip acee4d813db4e6908b75d348767cf01e
-        unzip depotdownloader-2.4.7.zip -d depotdownloader-2.4.7
+        curl -L https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.5.0/depotdownloader-2.5.0.zip -o depotdownloader-2.5.0.zip
+        verify depotdownloader-2.5.0.zip 462442ad9973c6482be6a1a0af3aee60
+        unzip depotdownloader-2.5.0.zip -d depotdownloader-2.5.0
       fi
 
-      if [ ! -d "depotdownloader-2.4.7" ]; then
+      if [ ! -d "depotdownloader-2.5.0" ]; then
         echo "DepotDownloader not found, exiting.."
         exit 1
       fi
@@ -58,7 +58,7 @@ if [ ! -d "depots/$depotid/$buildid" ]; then
 
     echo -n "Steam username: "
     read -r username
-    dotnet depotdownloader-2.4.7/DepotDownloader.dll -app $appid -depot $depotid -manifest $manifestid -os linux -username "$username"
+    dotnet depotdownloader-2.5.0/DepotDownloader.dll -app $appid -depot $depotid -manifest $manifestid -os linux -username "$username"
   fi
 
   if [ ! -d "depots/$depotid" ]; then
