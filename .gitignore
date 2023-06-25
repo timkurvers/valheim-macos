@@ -1,4 +1,4 @@
 build/*
-!build/.keep
+build-beta/*
 vendor/*
 !vendor/.keep
