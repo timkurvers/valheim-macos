@@ -41,7 +41,7 @@ verify() {
 cd vendor
 
 if [ ! -d "depots/$depotid/$buildid" ]; then
-  if confirm "Download Valheim v$version (~1.5GB) from Steam?"; then
+  if confirm "Download Valheim $version (~1.5GB) from Steam?"; then
 
     if [ ! -d "depotdownloader-2.5.0" ]; then
       if confirm "Download (~2MB) and unzip DepotDownloader to download Valheim from Steam?"; then
@@ -61,8 +61,9 @@ if [ ! -d "depots/$depotid/$buildid" ]; then
     dotnet depotdownloader-2.5.0/DepotDownloader.dll -app $appid -depot $depotid -manifest $manifestid -os linux -username "$username"
   fi
 
-  if [ ! -d "depots/$depotid" ]; then
-    echo "Valheim data not found, exiting.."
+  if [ ! -d "depots/$depotid/$buildid/valheim_Data" ]; then
+    echo "Valheim data for build $buildid not found, exiting.."
+    echo "(the build script may need to be updated if a patch was recently released)"
     exit 1
   fi
 fi
@@ -138,3 +139,5 @@ cp -r vendor/PlayFabParty-for-macOS_v1.7.16/PlayFabParty-for-macOS/PlayFabPartyM
 
 rm -rf $prefix/Resources/Data/Plugins
 rm -rf $prefix/Resources/Data/MonoBleedingEdge
+
+echo "Building Valheim $version complete: build/Valheim.app"
