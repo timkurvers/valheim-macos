@@ -107,6 +107,7 @@ fi
 
 cd ..
 
+mkdir -p build
 rm -rf build/*
 cp -r skeleton/* build/
 
