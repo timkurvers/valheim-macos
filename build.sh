@@ -1,4 +1,6 @@
 #!/bin/bash
+# shellcheck disable=SC2002
+
 cd "$(dirname "$0")"
 
 set -e
@@ -123,7 +125,7 @@ fi
 cd ..
 
 mkdir -p $outdir
-rm -rf $outdir/*
+rm -rf ${outdir:?}/*
 cp -r skeleton/* $outdir/
 
 prefix="$outdir/Valheim.app/Contents"
