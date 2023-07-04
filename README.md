@@ -1,6 +1,7 @@
 # Valheim macOS
 
-[![Valheim version](https://badgen.net/badge/Valheim%20version/0.216.9/green)](https://valheim.com/news/patch-0-216-9)
+[![Stable version](https://badgen.net/badge/Stable%20version/0.216.9/green)](https://valheim.com/news/patch-0-216-9)
+[![Public Test version](https://badgen.net/badge/Public%20Test%20version/0.217.7/orange)](https://store.steampowered.com/news/app/892970/view/3658659836549833064)
 
 ## Background
 
@@ -84,8 +85,11 @@ These steps take between 15 to 30 minutes to complete, depending on network spee
 3. Run `./build.sh` and follow the instructions.
 
    > __Note__
-   > The script requires Steam credentials so that Valheim data can be acquired. As the original
-   > macOS Steam client does not have access to Valheim, this is done via [DepotDownloader].
+   > The script will ask for Steam credentials so that Valheim data can be acquired. As the original
+   > macOS Steam client does not have access to Valheim, this is done automatically via [DepotDownloader].
+
+   If you would rather use the Public Test build, run `./build.sh --beta` instead. Read the [official Public Test FAQ]
+   to learn more.
 
 4. Once the build script finishes, verify the presence of `Valheim.app` in the `build` folder.
 5. If you are in dire need of disk space: the contents of the `vendor` folder can be safely deleted at this point.
@@ -182,6 +186,7 @@ Feedback, issues, or pull requests with improvements are more than welcome! 🙏
 [browsed online]: https://store.steampowered.com/account/remotestorageapp/?appid=892970
 [official Dotnet installer]: https://dotnet.microsoft.com/en-us/download
 [official Valheim Twitter account]: https://twitter.com/Valheimgame
+[official Public Test FAQ]: https://steamcommunity.com/app/892970/discussions/5/3589961352692584029/
 [porting Unity games to different platforms]: https://www.pcgamingwiki.com/wiki/Engine:Unity/Porting
 [r/macgaming]: https://www.reddit.com/r/macgaming/comments/1217lko/valheim_macos_build_script/
 [the build to be damaged]: https://github.com/timkurvers/valheim-macos/issues/16#issuecomment-1517025125

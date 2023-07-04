@@ -1,4 +1,6 @@
 #!/bin/bash
+# shellcheck disable=SC2002
+
 cd "$(dirname "$0")"
 
 set -e
@@ -6,14 +8,28 @@ set -e
 # Valheim configuration
 appid=892970
 depotid=892971
+
+# Stable (public)
+branch="public"
 buildid=11422039
 manifestid=9217850553460069452
 version="0.216.9"
-
-# Unity configuration
 unityversion="2020.3.45f1"
 unityhash="660cd1701bd5"
 variant="macos_x64_nondevelopment_mono"
+outdir="build"
+
+# Beta (public-test)
+if [[ " $* " =~ " --beta " ]]; then
+  branch="public-test"
+  buildid=11535571
+  unset manifestid
+  version="0.217.7"
+  # unityversion="2020.3.45f1"
+  # unityhash="660cd1701bd5"
+  # variant="macos_x64_nondevelopment_mono"
+  outdir="build-beta"
+fi
 
 confirm() {
   read -r -p "${1:-Are you sure?} [y/N] " response
@@ -58,7 +74,7 @@ if [ ! -d "depots/$depotid/$buildid" ]; then
 
     echo -n "Steam username: "
     read -r username
-    dotnet depotdownloader-2.5.0/DepotDownloader.dll -app $appid -depot $depotid -manifest $manifestid -os linux -username "$username"
+    dotnet depotdownloader-2.5.0/DepotDownloader.dll -app $appid -depot $depotid -manifest $manifestid -beta $branch -os linux -username "$username"
   fi
 
   if [ ! -d "depots/$depotid/$buildid/valheim_Data" ]; then
@@ -108,11 +124,11 @@ fi
 
 cd ..
 
-mkdir -p build
-rm -rf build/*
-cp -r skeleton/* build/
+mkdir -p $outdir
+rm -rf ${outdir:?}/*
+cp -r skeleton/* $outdir/
 
-prefix="build/Valheim.app/Contents"
+prefix="$outdir/Valheim.app/Contents"
 unityprefix="vendor/Unity-$unityversion/Unity.pkg.tmp/Payload/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport"
 
 cat skeleton/Valheim.app/Contents/Info.plist \
@@ -140,4 +156,4 @@ cp -r vendor/PlayFabParty-for-macOS_v1.7.16/PlayFabParty-for-macOS/PlayFabPartyM
 rm -rf $prefix/Resources/Data/Plugins
 rm -rf $prefix/Resources/Data/MonoBleedingEdge
 
-echo "Building Valheim $version complete: build/Valheim.app"
+echo "Building Valheim $version complete: $outdir/Valheim.app"
