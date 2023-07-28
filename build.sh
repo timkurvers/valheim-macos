@@ -16,8 +16,9 @@ manifestid=9217850553460069452
 version="0.216.9"
 unityversion="2020.3.45f1"
 unityhash="660cd1701bd5"
-variant="macos_x64_nondevelopment_mono"
-outdir="build"
+variant="macos_x64arm64_nondevelopment_mono"
+# TODO: Figure out build folder
+outdir="build-universal"
 
 # Beta (public-test)
 if [[ " $* " =~ " --beta " ]]; then
@@ -155,5 +156,24 @@ cp -r vendor/PlayFabParty-for-macOS_v1.7.16/PlayFabParty-for-macOS/PlayFabPartyM
 
 rm -rf $prefix/Resources/Data/Plugins
 rm -rf $prefix/Resources/Data/MonoBleedingEdge
+
+# Patch UnityPlayer to support OpenGL for arm64 (Apple Silicon)
+#
+# In Unity's SelectRenderingApi for arm64 there seems to be some logic that
+# enforces Metal (0x10) and disregards OpenGL (0x11). The following assembly
+# instruction is a fallback that ultimately sets graphics to None (0x4):
+#
+# > 89008052   mov     w9, #0x4
+#
+# By patching this instruction from None (0x4) to OpenGL (0x11) we enforce OpenGL.
+#
+# TODO: Will only work for this _exact_ UnityPlayer.dylib file, so should probably
+# verify against $unityhash and $variant (x64arm64_nondevelopment)
+#
+printf "\x29\x02" | dd of="$prefix/Frameworks/UnityPlayer.dylib" bs=1 seek=36675200 conv=notrunc
+
+# As UnityPlayer's code has been modified, re-sign with an ad-hoc identity
+# TODO: What kind of restrictions does this entail? No longer distributable?
+codesign --force --sign - $prefix/Frameworks/UnityPlayer.dylib
 
 echo "Building Valheim $version complete: $outdir/Valheim.app"
