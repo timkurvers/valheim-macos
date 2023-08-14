@@ -42,6 +42,7 @@ Some statistics thanks to the kind community members of [r/macgaming]:
 | M1 Pro 16"       | 1440p         | Low           | 60fps+   |
 | M1 Pro 16"       | 1080p         | Low           | 100fps   |
 | M1 Pro 14"       | 1440p         | Medium        | 45-60fps |
+| M1 Air           | 900p          | Medium / High | 35-50fps |
 | Intel 15" (2017) | 800p          | Low           | 30-40fps |
 
 Here is to hoping that Iron Gate support macOS natively in the future with Apple Silicon and Metal support. 🍻
