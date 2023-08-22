@@ -5,16 +5,11 @@
 
 ## Background
 
-A Steam leak in 2021 seemed to indicate that Iron Gate, developers of Valheim, were exploring macOS
-support.
+Iron Gate, developers of Valheim, have not entirely written off the macOS port it seems, as pointed
+out by developer [IronMontilyet]:
 
-Unfortunately, that seems to be in limbo currently, as pointed out by moderator [Munin]:
-
-> A little update: They [Iron Gate] still want do the Mac version. The question is just when. Currently, they focus
-> on developing the Windows & Linux versions of the game (surprise, surprise - I know), and simply don't have time
-> to work on supporting another OS.
->
-> There's already a Valheim Mac Depot (last updated in April 2021), and it runs OK ("Okay") with Unity.
+> We're looking into the possibilities of porting the game to MacOS, but we don't have a set timeframe
+> for when that will happen. It's fun to see that so many people are hoping for a Mac version!
 
 After reading an article on [porting Unity games to different platforms], I started experimenting with
 building a custom Valheim build for macOS based on the Linux version: collecting the game data, fetching the
@@ -180,7 +175,7 @@ Feedback, issues, or pull requests with improvements are more than welcome! 🙏
 [Dotnet CLI]: https://learn.microsoft.com/en-us/dotnet/core/tools/
 [Game pads / controllers may not work]: https://github.com/timkurvers/valheim-macos/issues/11
 [Homebrew]: https://brew.sh/
-[Munin]: https://steamcommunity.com/app/892970/discussions/2/3192485276070223820/?ctp=68#c3446961485766994098
+[IronMontilyet]: https://steamcommunity.com/app/892970/discussions/2/3192485276070223820/?ctp=73#c6861841362673118150
 [Steam Cloud integration may misbehave]: https://github.com/timkurvers/valheim-macos/issues/10
 [Valheim]: https://store.steampowered.com/app/892970/Valheim/
 [at your own risk]: LICENSE.md
