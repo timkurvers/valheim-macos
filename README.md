@@ -1,7 +1,7 @@
 # Valheim macOS
 
 [![Stable version](https://badgen.net/badge/Stable%20version/0.217.14/green)](https://valheim.com/news/patch-0-217-14-hildir-s-request/)
-[![Public Test version](https://badgen.net/badge/Public%20Test%20version/0.217.14/orange)](https://valheim.com/news/patch-0-217-14-hildir-s-request/)
+[![Public Test version](https://badgen.net/badge/Public%20Test%20version/0.217.19/orange)](https://store.steampowered.com/news/app/892970/view/6816816781637239165)
 
 ## Background
 
