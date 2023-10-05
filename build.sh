@@ -11,9 +11,9 @@ depotid=892971
 
 # Stable (public)
 branch="public"
-buildid=11978864
-manifestid=8859735339282112850
-version="0.217.14"
+buildid=12314274
+manifestid=3801804209808007789
+version="0.217.22"
 unityversion="2020.3.45f1"
 unityhash="660cd1701bd5"
 variant="macos_x64_nondevelopment_mono"
@@ -22,9 +22,9 @@ outdir="build"
 # Beta (public-test)
 if [[ " $* " =~ " --beta " ]]; then
   branch="public-test"
-  buildid=12214180
+  buildid=12314274
   unset manifestid
-  version="0.217.19"
+  version="0.217.22"
   # unityversion="2020.3.45f1"
   # unityhash="660cd1701bd5"
   # variant="macos_x64_nondevelopment_mono"
