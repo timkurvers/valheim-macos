@@ -112,6 +112,10 @@ To generate a new build:
 
 ## Known issues
 
+- If a Valheim patch was newly released the script may no longer be able to produce a build altogether – not even
+  the supported version documented here in the README. This is due to a [bug in DepotDownloader]. Wait for the
+  script to be updated.
+
 - Steam overlay is non-functional when launched directly from `Valheim.app`.
   - Press `F2` in-game to show Valheim's built-in FPS and network details panel.
   - Alternatively: add `Valheim.app` as a non-Steam game and launch via Steam.
@@ -180,6 +184,7 @@ Feedback, issues, or pull requests with improvements are more than welcome! 🙏
 [Valheim]: https://store.steampowered.com/app/892970/Valheim/
 [at your own risk]: LICENSE.md
 [browsed online]: https://store.steampowered.com/account/remotestorageapp/?appid=892970
+[bug in DepotDownloader]: https://github.com/SteamRE/DepotDownloader/issues/450
 [official Dotnet installer]: https://dotnet.microsoft.com/en-us/download
 [official Valheim Twitter account]: https://twitter.com/Valheimgame
 [official Public Test FAQ]: https://steamcommunity.com/app/892970/discussions/5/3589961352692584029/
