@@ -1,7 +1,7 @@
 # Valheim macOS
 
 [![Stable version](https://badgen.net/badge/Stable%20version/0.217.24/green)](https://store.steampowered.com/news/app/892970/view/3747615443048429530)
-[![Public Test version](https://badgen.net/badge/Public%20Test%20version/0.217.22/orange)](https://store.steampowered.com/news/app/892970/view/3747614808337673140)
+[![Public Test version](https://badgen.net/badge/Public%20Test%20version/0.217.25/orange)](https://store.steampowered.com/news/app/892970/view/6688466724224306368)
 
 ## Background
 
