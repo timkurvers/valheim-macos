@@ -22,9 +22,9 @@ outdir="build"
 # Beta (public-test)
 if [[ " $* " =~ " --beta " ]]; then
   branch="public-test"
-  buildid=12314274
+  buildid=12413229
   unset manifestid
-  version="0.217.22"
+  version="0.217.25"
   # unityversion="2020.3.45f1"
   # unityhash="660cd1701bd5"
   # variant="macos_x64_nondevelopment_mono"
