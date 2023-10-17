@@ -11,9 +11,9 @@ depotid=892971
 
 # Stable (public)
 branch="public"
-buildid=12373664
-manifestid=7704010523519758739
-version="0.217.24"
+buildid=12413229
+manifestid=4749251671148241556
+version="0.217.25"
 unityversion="2020.3.45f1"
 unityhash="660cd1701bd5"
 variant="macos_x64_nondevelopment_mono"
