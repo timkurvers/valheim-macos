@@ -87,6 +87,7 @@ fi
 if [ ! -d "Unity-$unityversion" ]; then
   if confirm "Download Unity v$unityversion data files (~3.5GB)?"; then
     curl -L https://download.unity3d.com/download_unity/$unityhash/MacEditorInstaller/Unity.pkg -o Unity-$unityversion.pkg
+    echo "(unpacking Unity.pkg, this may take a while...)"
     pkgutil --expand-full Unity-$unityversion.pkg Unity-$unityversion
   fi
 
