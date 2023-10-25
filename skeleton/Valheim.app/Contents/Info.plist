@@ -7,7 +7,7 @@
     <key>CFBundleExecutable</key>
     <string>Valheim</string>
     <key>CFBundleGetInfoString</key>
-    <string>Valheim $version — Unity Player version $unityversion ($unityhash). (c) 2020 Unity Technologies ApS. All rights reserved.</string>
+    <string>Valheim $version — Unity Player version $unityversion ($unityhash). (c) $unityyear Unity Technologies ApS. All rights reserved.</string>
     <key>CFBundleIconFile</key>
     <string>Valheim.icns</string>
     <key>CFBundleIdentifier</key>

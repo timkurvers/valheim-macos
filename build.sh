@@ -140,6 +140,7 @@ cat skeleton/Valheim.app/Contents/Info.plist \
     | sed "s|\$appid|$appid|g" \
     | sed "s|\$unityhash|$unityhash|g" \
     | sed "s|\$unityversion|$unityversion|g" \
+    | sed "s|\$unityyear|${unityversion:0:4}|g" \
     | sed "s|\$version|$version|g" \
     > $prefix/Info.plist
 
