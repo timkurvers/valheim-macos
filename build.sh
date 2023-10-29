@@ -17,17 +17,21 @@ version="0.217.25"
 unityversion="2020.3.45f1"
 unityhash="660cd1701bd5"
 variant="macos_x64_nondevelopment_mono"
+steamworksversion="14.0.0"
+steamworkshash="889417c79b52e7a33e67807aac21337c"
 outdir="build"
 
 # Beta (public-test)
 if [[ " $* " =~ " --beta " ]]; then
   branch="public-test"
-  buildid=12413229
+  buildid=12528422
   unset manifestid
-  version="0.217.25"
-  # unityversion="2020.3.45f1"
-  # unityhash="660cd1701bd5"
-  # variant="macos_x64_nondevelopment_mono"
+  version="0.217.27"
+  unityversion="2022.3.9f1"
+  unityhash="ea401c316338"
+  variant="macos_x64_player_nondevelopment_mono"
+  steamworksversion="20.2.0"
+  steamworkshash="6c8e7f5101176ed13d32cf704a4febe6"
   outdir="build-beta"
 fi
 
@@ -97,14 +101,14 @@ if [ ! -d "Unity-$unityversion" ]; then
   fi
 fi
 
-if [ ! -d "Steamworks.NET-Standalone_14.0.0" ]; then
+if [ ! -d "Steamworks.NET-Standalone_$steamworksversion" ]; then
   if confirm "Download Steamworks.NET (~2.5MB) from GitHub?"; then
-    curl -L https://github.com/rlabrecque/Steamworks.NET/releases/download/14.0.0/Steamworks.NET-Standalone_14.0.0.zip -o Steamworks.NET-Standalone_14.0.0.zip
-    verify Steamworks.NET-Standalone_14.0.0.zip 889417c79b52e7a33e67807aac21337c
-    unzip Steamworks.NET-Standalone_14.0.0.zip -d Steamworks.NET-Standalone_14.0.0
+    curl -L https://github.com/rlabrecque/Steamworks.NET/releases/download/$steamworksversion/Steamworks.NET-Standalone_$steamworksversion.zip -o Steamworks.NET-Standalone_$steamworksversion.zip
+    verify Steamworks.NET-Standalone_$steamworksversion.zip $steamworkshash
+    unzip Steamworks.NET-Standalone_$steamworksversion.zip -d Steamworks.NET-Standalone_$steamworksversion
   fi
 
-  if [ ! -d "Steamworks.NET-Standalone_14.0.0" ]; then
+  if [ ! -d "Steamworks.NET-Standalone_$steamworksversion" ]; then
     echo "Steamworks.NET not found, exiting.."
     exit 1
   fi
@@ -136,6 +140,7 @@ cat skeleton/Valheim.app/Contents/Info.plist \
     | sed "s|\$appid|$appid|g" \
     | sed "s|\$unityhash|$unityhash|g" \
     | sed "s|\$unityversion|$unityversion|g" \
+    | sed "s|\$unityyear|${unityversion:0:4}|g" \
     | sed "s|\$version|$version|g" \
     > $prefix/Info.plist
 
@@ -150,7 +155,7 @@ cp -r $prefix/Resources/Data/Resources/* $prefix/Resources/
 rm $prefix/Resources/UnityPlayer.png
 
 cp vendor/depots/$depotid/$buildid/valheim_Data/Plugins/Steamworks.NET.txt $prefix/PlugIns/
-cp -r vendor/Steamworks.NET-Standalone_14.0.0/OSX-Linux-x64/steam_api.bundle $prefix/Plugins/
+cp -r vendor/Steamworks.NET-Standalone_$steamworksversion/OSX-Linux-x64/steam_api.bundle $prefix/Plugins/
 
 cp -r vendor/PlayFabParty-for-macOS_v1.7.16/PlayFabParty-for-macOS/PlayFabPartyMacOS.bundle $prefix/Plugins/party.bundle
 
