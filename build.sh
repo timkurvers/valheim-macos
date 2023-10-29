@@ -14,11 +14,15 @@ branch="public"
 buildid=12413229
 manifestid=4749251671148241556
 version="0.217.25"
+depotdownloaderversion="2.5.0"
+depotdownloaderhash="462442ad9973c6482be6a1a0af3aee60"
 unityversion="2020.3.45f1"
 unityhash="660cd1701bd5"
 variant="macos_x64_nondevelopment_mono"
 steamworksversion="14.0.0"
 steamworkshash="889417c79b52e7a33e67807aac21337c"
+playfabpartyversion="1.7.16"
+playfabpartyhash="95cd6814893d57abd63c19fb668d304c"
 outdir="build"
 
 # Beta (public-test)
@@ -63,14 +67,14 @@ cd vendor
 if [ ! -d "depots/$depotid/$buildid" ]; then
   if confirm "Download Valheim $version (~1.5GB) from Steam?"; then
 
-    if [ ! -d "depotdownloader-2.5.0" ]; then
+    if [ ! -d "depotdownloader-$depotdownloaderversion" ]; then
       if confirm "Download (~2MB) and unzip DepotDownloader to download Valheim from Steam?"; then
-        curl -L https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_2.5.0/depotdownloader-2.5.0.zip -o depotdownloader-2.5.0.zip
-        verify depotdownloader-2.5.0.zip 462442ad9973c6482be6a1a0af3aee60
-        unzip depotdownloader-2.5.0.zip -d depotdownloader-2.5.0
+        curl -L https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_$depotdownloaderversion/depotdownloader-$depotdownloaderversion.zip -o depotdownloader-$depotdownloaderversion.zip
+        verify depotdownloader-$depotdownloaderversion.zip $depotdownloaderhash
+        unzip depotdownloader-$depotdownloaderversion.zip -d depotdownloader-$depotdownloaderversion
       fi
 
-      if [ ! -d "depotdownloader-2.5.0" ]; then
+      if [ ! -d "depotdownloader-$depotdownloaderversion" ]; then
         echo "DepotDownloader not found, exiting.."
         exit 1
       fi
@@ -78,7 +82,7 @@ if [ ! -d "depots/$depotid/$buildid" ]; then
 
     echo -n "Steam username: "
     read -r username
-    dotnet depotdownloader-2.5.0/DepotDownloader.dll -app $appid -depot $depotid -manifest $manifestid -beta $branch -os linux -username "$username"
+    dotnet depotdownloader-$depotdownloaderversion/DepotDownloader.dll -app $appid -depot $depotid -manifest $manifestid -beta $branch -os linux -username "$username"
   fi
 
   if [ ! -d "depots/$depotid/$buildid/valheim_Data" ]; then
@@ -114,14 +118,14 @@ if [ ! -d "Steamworks.NET-Standalone_$steamworksversion" ]; then
   fi
 fi
 
-if [ ! -d "PlayFabParty-for-macOS_v1.7.16" ]; then
+if [ ! -d "PlayFabParty-for-macOS_v$playfabpartyversion" ]; then
   if confirm "Download PlayFabParty (~100MB) from GitHub?"; then
-    curl -L https://github.com/PlayFab/PlayFabParty/releases/download/v1.7.16/PlayFabParty-for-macOS.zip -o PlayFabParty-for-macOS_v1.7.16.zip
-    verify PlayFabParty-for-macOS_v1.7.16.zip 95cd6814893d57abd63c19fb668d304c
-    unzip PlayFabParty-for-macOS_v1.7.16.zip -d PlayFabParty-for-macOS_v1.7.16
+    curl -L "https://github.com/PlayFab/PlayFabParty/releases/download/v$playfabpartyversion/PlayFabParty-for-macOS.zip" -o "PlayFabParty-for-macOS_v$playfabpartyversion.zip"
+    verify "PlayFabParty-for-macOS_v$playfabpartyversion.zip" $playfabpartyhash
+    unzip "PlayFabParty-for-macOS_v$playfabpartyversion.zip" -d "PlayFabParty-for-macOS_v$playfabpartyversion"
   fi
 
-  if [ ! -d "PlayFabParty-for-macOS_v1.7.16" ]; then
+  if [ ! -d "PlayFabParty-for-macOS_v$playfabpartyversion" ]; then
     echo "PlayFabParty not found, exiting.."
     exit 1
   fi
@@ -157,7 +161,7 @@ rm $prefix/Resources/UnityPlayer.png
 cp vendor/depots/$depotid/$buildid/valheim_Data/Plugins/Steamworks.NET.txt $prefix/PlugIns/
 cp -r vendor/Steamworks.NET-Standalone_$steamworksversion/OSX-Linux-x64/steam_api.bundle $prefix/Plugins/
 
-cp -r vendor/PlayFabParty-for-macOS_v1.7.16/PlayFabParty-for-macOS/PlayFabPartyMacOS.bundle $prefix/Plugins/party.bundle
+cp -r "vendor/PlayFabParty-for-macOS_v$playfabpartyversion/PlayFabParty-for-macOS/PlayFabPartyMacOS.bundle" $prefix/Plugins/party.bundle
 
 rm -rf $prefix/Resources/Data/Plugins
 rm -rf $prefix/Resources/Data/MonoBleedingEdge
