@@ -24,11 +24,11 @@ outdir="build"
 # Beta (public-test)
 if [[ " $* " =~ " --beta " ]]; then
   branch="public-test"
-  buildid=12528422
+  buildid=12593117
   unset manifestid
-  version="0.217.27"
-  unityversion="2022.3.9f1"
-  unityhash="ea401c316338"
+  version="0.217.28"
+  unityversion="2022.3.12f1"
+  unityhash="4fe6e059c7ef"
   variant="macos_x64_player_nondevelopment_mono"
   steamworksversion="20.2.0"
   steamworkshash="6c8e7f5101176ed13d32cf704a4febe6"
