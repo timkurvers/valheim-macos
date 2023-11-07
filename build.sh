@@ -11,16 +11,16 @@ depotid=892971
 
 # Stable (public)
 branch="public"
-buildid=12413229
-manifestid=4749251671148241556
-version="0.217.25"
+buildid=12593117
+manifestid=8248830790758710826
+version="0.217.28"
 depotdownloaderversion="2.5.0"
 depotdownloaderhash="462442ad9973c6482be6a1a0af3aee60"
-unityversion="2020.3.45f1"
-unityhash="660cd1701bd5"
-variant="macos_x64_nondevelopment_mono"
-steamworksversion="14.0.0"
-steamworkshash="889417c79b52e7a33e67807aac21337c"
+unityversion="2022.3.12f1"
+unityhash="4fe6e059c7ef"
+variant="macos_x64_player_nondevelopment_mono"
+steamworksversion="20.2.0"
+steamworkshash="6c8e7f5101176ed13d32cf704a4febe6"
 playfabpartyversion="1.7.16"
 playfabpartyhash="95cd6814893d57abd63c19fb668d304c"
 outdir="build"
@@ -28,14 +28,9 @@ outdir="build"
 # Beta (public-test)
 if [[ " $* " =~ " --beta " ]]; then
   branch="public-test"
-  buildid=12528422
+  buildid=12593117
   unset manifestid
-  version="0.217.27"
-  unityversion="2022.3.9f1"
-  unityhash="ea401c316338"
-  variant="macos_x64_player_nondevelopment_mono"
-  steamworksversion="20.2.0"
-  steamworkshash="6c8e7f5101176ed13d32cf704a4febe6"
+  version="0.217.28"
   outdir="build-beta"
 fi
 
