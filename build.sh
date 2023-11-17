@@ -28,9 +28,9 @@ outdir="build"
 # Beta (public-test)
 if [[ " $* " =~ " --beta " ]]; then
   branch="public-test"
-  buildid=12662355
+  buildid=12710332
   unset manifestid
-  version="0.217.30"
+  version="0.217.31"
   outdir="build-beta"
 fi
 
