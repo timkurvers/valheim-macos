@@ -11,9 +11,9 @@ depotid=892971
 
 # Stable (public)
 branch="public"
-buildid=12710332
-manifestid=1377063642404127607
-version="0.217.31"
+buildid=12959248
+manifestid=7697447462593569757
+version="0.217.38"
 depotdownloaderversion="2.5.0"
 depotdownloaderhash="462442ad9973c6482be6a1a0af3aee60"
 unityversion="2022.3.12f1"
@@ -28,9 +28,9 @@ outdir="build"
 # Beta (public-test)
 if [[ " $* " =~ " --beta " ]]; then
   branch="public-test"
-  buildid=12908991
+  buildid=12959248
   unset manifestid
-  version="0.217.37"
+  version="0.217.38"
   outdir="build-beta"
 fi
 
