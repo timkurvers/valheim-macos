@@ -63,9 +63,6 @@ etc. in jeopardy.
 - A Steam account that owns [Valheim].
 - ~15GB free hard disk space. The majority of this space can be reclaimed once the build is complete.
 - An internet connection to download the game data and dependencies.
-- [Dotnet CLI]
-  - Easiest to install via [Homebrew]: `brew install dotnet@7`.
-  - Alternatively, install using the [official Dotnet installer].
 
 ### Initial build
 
@@ -176,7 +173,6 @@ The icon is the profile image of the [official Valheim Twitter account] and is p
 Feedback, issues, or pull requests with improvements are more than welcome! 🙏
 
 [DepotDownloader]: https://github.com/SteamRE/DepotDownloader
-[Dotnet CLI]: https://learn.microsoft.com/en-us/dotnet/core/tools/
 [Game pads / controllers may not work]: https://github.com/timkurvers/valheim-macos/issues/11
 [Homebrew]: https://brew.sh/
 [IronMontilyet]: https://steamcommunity.com/app/892970/discussions/2/3192485276070223820/?ctp=73#c6861841362673118150
@@ -185,7 +181,6 @@ Feedback, issues, or pull requests with improvements are more than welcome! 🙏
 [at your own risk]: LICENSE.md
 [browsed online]: https://store.steampowered.com/account/remotestorageapp/?appid=892970
 [bug in DepotDownloader]: https://github.com/SteamRE/DepotDownloader/issues/450
-[official Dotnet installer]: https://dotnet.microsoft.com/en-us/download
 [official Valheim Twitter account]: https://twitter.com/Valheimgame
 [official Public Test FAQ]: https://steamcommunity.com/app/892970/discussions/5/3589961352692584029/
 [porting Unity games to different platforms]: https://www.pcgamingwiki.com/wiki/Engine:Unity/Porting
