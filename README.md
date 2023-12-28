@@ -52,7 +52,8 @@ Azure PlayFab cross-play services, and most likely Iron Gate's own services. The
 this custom build as problematic (or the build itself may behave incorrectly) and put your account, characters
 etc. in jeopardy.
 
-> __Warning__
+> [!WARNING]
+>
 > **Usage of this build script and the resulting macOS build is [at your own risk]. Official support channels
 > will not be able to help you with any issues.**
 
@@ -72,17 +73,8 @@ etc. in jeopardy.
 These steps take between 15 to 30 minutes to complete, depending on network speed and computing power.
 
 1. Clone this repository: `git clone https://github.com/timkurvers/valheim-macos`.
-
-   > __Note__
-   > Downloading the repository as a zip-file may cause [the build to be damaged] due to macOS quarantining
-   > files that originate from the internet.
-
 2. Navigate to the cloned repository in your terminal of choice.
 3. Run `./build.sh` and follow the instructions.
-
-   > __Note__
-   > The script will ask for Steam credentials so that Valheim data can be acquired. As the original
-   > macOS Steam client does not have access to Valheim, this is done automatically via [DepotDownloader].
 
    If you would rather use the Public Test build, run `./build.sh --beta` instead. Read the [official Public Test FAQ]
    to learn more.
@@ -91,17 +83,27 @@ These steps take between 15 to 30 minutes to complete, depending on network spee
 5. If you are in dire need of disk space: the contents of the `vendor` folder can be safely deleted at this point.
    Those files are there to make future rebuilds faster, but are not necessary for the app to function once built.
 
+> [!IMPORTANT]
+>
+> Downloading the repository as a zip-file may cause [the build to be damaged] due to macOS quarantining
+> files that originate from the internet. Clone the repository instead.
+
 ## Running
 
 1. Start Steam and log into an account that owns Valheim.
 2. Launch `Valheim.app` from the `build` folder.
+
+> [!TIP]
+>
+> If the game exits after the two logo splashscreens: check that Steam is running.
 
 ## Patching
 
 Future Valheim patches will require updates to the build script and you may not be able to play with an outdated
 build. Look at the top of this README to see what version of Valheim is currently supported.
 
-> __Note__
+> [!NOTE]
+>
 > It may take a day or two before the script is updated to support a recently released patch.
 
 To generate a new build:
