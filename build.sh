@@ -15,7 +15,8 @@ buildid=12959248
 manifestid=7697447462593569757
 version="0.217.38"
 depotdownloaderversion="2.5.0"
-depotdownloaderhash="462442ad9973c6482be6a1a0af3aee60"
+depotdownloaderarch="arm64"
+depotdownloaderhash="e46b90b6a838e055c21856931e21f096"
 unityversion="2022.3.12f1"
 unityhash="4fe6e059c7ef"
 variant="macos_x64_player_nondevelopment_mono"
@@ -24,6 +25,12 @@ steamworkshash="6c8e7f5101176ed13d32cf704a4febe6"
 playfabpartyversion="1.7.16"
 playfabpartyhash="95cd6814893d57abd63c19fb668d304c"
 outdir="build"
+
+# Intel (x86_64) support
+if [ "$(arch)" = "i386" ]; then
+  depotdownloaderarch="x64"
+  depotdownloaderhash="c9862fc3a73960a60130551fa4141b82"
+fi
 
 # Beta (public-test)
 if [[ " $* " =~ " --beta " ]]; then
@@ -62,22 +69,25 @@ cd vendor
 if [ ! -d "depots/$depotid/$buildid" ]; then
   if confirm "Download Valheim $version (~1.5GB) from Steam?"; then
 
-    if [ ! -d "depotdownloader-$depotdownloaderversion" ]; then
-      if confirm "Download (~2MB) and unzip DepotDownloader to download Valheim from Steam?"; then
-        curl -L https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_$depotdownloaderversion/depotdownloader-$depotdownloaderversion.zip -o depotdownloader-$depotdownloaderversion.zip
-        verify depotdownloader-$depotdownloaderversion.zip $depotdownloaderhash
-        unzip depotdownloader-$depotdownloaderversion.zip -d depotdownloader-$depotdownloaderversion
+    if [ ! -d "depotdownloader-$depotdownloaderversion-$depotdownloaderarch" ]; then
+      if confirm "Download (~80MB) and unzip DepotDownloader ($depotdownloaderarch) to download Valheim from Steam?"; then
+        curl -L https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_$depotdownloaderversion/depotdownloader-macos-$depotdownloaderarch.zip -o depotdownloader-$depotdownloaderversion-macos-$depotdownloaderarch.zip
+        verify depotdownloader-$depotdownloaderversion-macos-$depotdownloaderarch.zip $depotdownloaderhash
+        unzip depotdownloader-$depotdownloaderversion-macos-$depotdownloaderarch.zip -d depotdownloader-$depotdownloaderversion-$depotdownloaderarch
       fi
 
-      if [ ! -d "depotdownloader-$depotdownloaderversion" ]; then
+      if [ ! -d "depotdownloader-$depotdownloaderversion-$depotdownloaderarch" ]; then
         echo "DepotDownloader not found, exiting.."
         exit 1
       fi
     fi
 
+    xattr -c depotdownloader-$depotdownloaderversion-$depotdownloaderarch/DepotDownloader
+    chmod u+x depotdownloader-$depotdownloaderversion-$depotdownloaderarch/DepotDownloader
+
     echo -n "Steam username: "
     read -r username
-    dotnet depotdownloader-$depotdownloaderversion/DepotDownloader.dll -app $appid -depot $depotid -manifest $manifestid -beta $branch -os linux -username "$username"
+    ./depotdownloader-$depotdownloaderversion-$depotdownloaderarch/DepotDownloader -app $appid -depot $depotid -manifest $manifestid -beta $branch -os linux -username "$username"
   fi
 
   if [ ! -d "depots/$depotid/$buildid/valheim_Data" ]; then
