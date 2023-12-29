@@ -138,6 +138,17 @@ fi
 
 cd ..
 
+cd plugins
+
+if [ ! -f "DiskSpacePlugin/build/DiskSpacePlugin.dylib" ]; then
+  echo "Building DiskSpacePlugin for macOS..."
+  cd DiskSpacePlugin
+  make build
+  cd ..
+fi
+
+cd ..
+
 mkdir -p $outdir
 rm -rf ${outdir:?}/*
 cp -r skeleton/* $outdir/
@@ -163,9 +174,9 @@ cp -r vendor/depots/$depotid/$buildid/valheim_Data $prefix/Resources/Data
 cp -r $prefix/Resources/Data/Resources/* $prefix/Resources/
 rm $prefix/Resources/UnityPlayer.png
 
+cp plugins/DiskSpacePlugin/build/DiskSpacePlugin.dylib $prefix/PlugIns/
 cp vendor/depots/$depotid/$buildid/valheim_Data/Plugins/Steamworks.NET.txt $prefix/PlugIns/
 cp -r vendor/Steamworks.NET-Standalone_$steamworksversion/OSX-Linux-x64/steam_api.bundle $prefix/Plugins/
-
 cp -r "vendor/PlayFabParty-for-macOS_v$playfabpartyversion/PlayFabParty-for-macOS/PlayFabPartyMacOS.bundle" $prefix/Plugins/party.bundle
 
 rm -rf $prefix/Resources/Data/Plugins
