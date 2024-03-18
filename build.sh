@@ -23,6 +23,7 @@ variant="macos_x64_player_nondevelopment_mono"
 steamworksversion="20.2.0"
 steamworkshash="6c8e7f5101176ed13d32cf704a4febe6"
 playfabpartyversion="1.7.16"
+playfabpartyasset="PlayFabParty-for-macOS.zip"
 playfabpartyhash="95cd6814893d57abd63c19fb668d304c"
 outdir="build"
 
@@ -35,9 +36,14 @@ fi
 # Beta (public-test)
 if [[ " $* " =~ " --beta " ]]; then
   branch="public-test"
-  buildid=12959248
+  buildid=13711282
   unset manifestid
-  version="0.217.38"
+  version="0.217.43"
+  unityversion="2022.3.17f1"
+  unityhash="4fc78088f837"
+  playfabpartyversion="1.8.0"
+  playfabpartyasset="PlayFabPartyMac.framework-for-macOS-Release.zip"
+  playfabpartyhash="93c4967e7dc74b281ca7614b96c941a9"
   outdir="build-beta"
 fi
 
@@ -111,7 +117,7 @@ if [ ! -d "Unity-$unityversion" ]; then
 fi
 
 if [ ! -d "Steamworks.NET-Standalone_$steamworksversion" ]; then
-  if confirm "Download Steamworks.NET (~2.5MB) from GitHub?"; then
+  if confirm "Download Steamworks.NET v$steamworksversion (~2.5MB) from GitHub?"; then
     curl -L https://github.com/rlabrecque/Steamworks.NET/releases/download/$steamworksversion/Steamworks.NET-Standalone_$steamworksversion.zip -o Steamworks.NET-Standalone_$steamworksversion.zip
     verify Steamworks.NET-Standalone_$steamworksversion.zip $steamworkshash
     unzip Steamworks.NET-Standalone_$steamworksversion.zip -d Steamworks.NET-Standalone_$steamworksversion
@@ -124,8 +130,8 @@ if [ ! -d "Steamworks.NET-Standalone_$steamworksversion" ]; then
 fi
 
 if [ ! -d "PlayFabParty-for-macOS_v$playfabpartyversion" ]; then
-  if confirm "Download PlayFabParty (~100MB) from GitHub?"; then
-    curl -L "https://github.com/PlayFab/PlayFabParty/releases/download/v$playfabpartyversion/PlayFabParty-for-macOS.zip" -o "PlayFabParty-for-macOS_v$playfabpartyversion.zip"
+  if confirm "Download PlayFabParty v$playfabpartyversion (~100MB) from GitHub?"; then
+    curl -L "https://github.com/PlayFab/PlayFabParty/releases/download/v$playfabpartyversion/$playfabpartyasset" -o "PlayFabParty-for-macOS_v$playfabpartyversion.zip"
     verify "PlayFabParty-for-macOS_v$playfabpartyversion.zip" $playfabpartyhash
     unzip "PlayFabParty-for-macOS_v$playfabpartyversion.zip" -d "PlayFabParty-for-macOS_v$playfabpartyversion"
   fi
@@ -177,7 +183,14 @@ rm $prefix/Resources/UnityPlayer.png
 cp plugins/DiskSpacePlugin/build/DiskSpacePlugin.dylib $prefix/PlugIns/
 cp vendor/depots/$depotid/$buildid/valheim_Data/Plugins/Steamworks.NET.txt $prefix/PlugIns/
 cp -r vendor/Steamworks.NET-Standalone_$steamworksversion/OSX-Linux-x64/steam_api.bundle $prefix/Plugins/
-cp -r "vendor/PlayFabParty-for-macOS_v$playfabpartyversion/PlayFabParty-for-macOS/PlayFabPartyMacOS.bundle" $prefix/Plugins/party.bundle
+
+# Beta (public-test)
+if [[ " $* " =~ " --beta " ]]; then
+  # Note: this will hopefully become the default for future versions
+  cp -r "vendor/PlayFabParty-for-macOS_v$playfabpartyversion/PlayFabPartyMacOS.bundle" $prefix/Plugins/party.bundle
+else
+  cp -r "vendor/PlayFabParty-for-macOS_v$playfabpartyversion/PlayFabParty-for-macOS/PlayFabPartyMacOS.bundle" $prefix/Plugins/party.bundle
+fi
 
 rm -rf $prefix/Resources/Data/Plugins
 rm -rf $prefix/Resources/Data/MonoBleedingEdge
