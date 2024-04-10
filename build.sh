@@ -11,20 +11,20 @@ depotid=892971
 
 # Stable (public)
 branch="public"
-buildid=12959248
-manifestid=7697447462593569757
-version="0.217.38"
+buildid=13920841
+manifestid=1036124488433202120
+version="0.217.46"
 depotdownloaderversion="2.5.0"
 depotdownloaderarch="arm64"
 depotdownloaderhash="e46b90b6a838e055c21856931e21f096"
-unityversion="2022.3.12f1"
-unityhash="4fe6e059c7ef"
+unityversion="2022.3.17f1"
+unityhash="4fc78088f837"
 variant="macos_x64_player_nondevelopment_mono"
 steamworksversion="20.2.0"
 steamworkshash="6c8e7f5101176ed13d32cf704a4febe6"
-playfabpartyversion="1.7.16"
-playfabpartyasset="PlayFabParty-for-macOS.zip"
-playfabpartyhash="95cd6814893d57abd63c19fb668d304c"
+playfabpartyversion="1.8.0"
+playfabpartyasset="PlayFabPartyMac.framework-for-macOS-Release.zip"
+playfabpartyhash="93c4967e7dc74b281ca7614b96c941a9"
 outdir="build"
 
 # Intel (x86_64) support
@@ -183,14 +183,7 @@ rm $prefix/Resources/UnityPlayer.png
 cp plugins/DiskSpacePlugin/build/DiskSpacePlugin.dylib $prefix/PlugIns/
 cp vendor/depots/$depotid/$buildid/valheim_Data/Plugins/Steamworks.NET.txt $prefix/PlugIns/
 cp -r vendor/Steamworks.NET-Standalone_$steamworksversion/OSX-Linux-x64/steam_api.bundle $prefix/Plugins/
-
-# Beta (public-test)
-if [[ " $* " =~ " --beta " ]]; then
-  # Note: this will hopefully become the default for future versions
-  cp -r "vendor/PlayFabParty-for-macOS_v$playfabpartyversion/PlayFabPartyMacOS.bundle" $prefix/Plugins/party.bundle
-else
-  cp -r "vendor/PlayFabParty-for-macOS_v$playfabpartyversion/PlayFabParty-for-macOS/PlayFabPartyMacOS.bundle" $prefix/Plugins/party.bundle
-fi
+cp -r "vendor/PlayFabParty-for-macOS_v$playfabpartyversion/PlayFabPartyMacOS.bundle" $prefix/Plugins/party.bundle
 
 rm -rf $prefix/Resources/Data/Plugins
 rm -rf $prefix/Resources/Data/MonoBleedingEdge
