@@ -36,9 +36,9 @@ fi
 # Beta (public-test)
 if [[ " $* " =~ " --beta " ]]; then
   branch="public-test"
-  buildid=14182885
+  buildid=14278846
   unset manifestid
-  version="0.218.12"
+  version="0.218.14"
   unityversion="2022.3.17f1"
   unityhash="4fc78088f837"
   playfabpartyversion="1.8.0"
