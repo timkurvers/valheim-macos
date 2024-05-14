@@ -11,9 +11,9 @@ depotid=892971
 
 # Stable (public)
 branch="public"
-buildid=13920841
-manifestid=1036124488433202120
-version="0.217.46"
+buildid=14349377
+manifestid=6968333214162889388
+version="0.218.15"
 depotdownloaderversion="2.5.0"
 depotdownloaderarch="arm64"
 depotdownloaderhash="e46b90b6a838e055c21856931e21f096"
@@ -36,9 +36,9 @@ fi
 # Beta (public-test)
 if [[ " $* " =~ " --beta " ]]; then
   branch="public-test"
-  buildid=14278846
+  buildid=14349377
   unset manifestid
-  version="0.218.14"
+  version="0.218.15"
   unityversion="2022.3.17f1"
   unityhash="4fc78088f837"
   playfabpartyversion="1.8.0"
