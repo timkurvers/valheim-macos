@@ -3,10 +3,18 @@
 [![Stable version](https://badgen.net/badge/Stable%20version/0.218.15/green)](https://valheim.com/news/patch-0-218-15-ashlands/)
 [![Public Test version](https://badgen.net/badge/Public%20Test%20version/0.218.15/orange)](https://valheim.com/news/patch-0-218-15-ashlands/)
 
+
+## Fantastic news 🎉
+
+<img src="https://github.com/timkurvers/valheim-macos/assets/378235/bb53e0ea-6f59-4847-9b87-f63169b96476" alt="Official macOS support for Valheim" width="60%" />
+
+This project will most likely be archived next week, see https://github.com/timkurvers/valheim-macos/issues/104 for more information.
+
+---
+
 ## Background
 
-Iron Gate, developers of Valheim, have not entirely written off the macOS port it seems, as pointed
-out by developer [IronMontilyet]:
+Valheim originally did not have a macOS port, as pointed out by developer [IronMontilyet]:
 
 > We're looking into the possibilities of porting the game to MacOS, but we don't have a set timeframe
 > for when that will happen. It's fun to see that so many people are hoping for a Mac version!
